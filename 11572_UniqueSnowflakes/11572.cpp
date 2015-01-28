@@ -1,23 +1,19 @@
-/* UVa problem: 10158
+/* UVa problem: 11572 - False Coin
  *
  * Topic: Data Structures
  *
  * Level: non-trivial
-
-
-
  *
  * Brief problem description:
- *   Determine the largest set of friends given pairs of friends.
+ *   A false coin weighs differently from the real coins. Given the
+ *   results of the weighings, find the false coin if possible.
  *
  * Solution Summary:
- *   Used disjoint sets as suggested by competitive programming 3.
- *   I didn't implement path compressing/ranks because it wasn't
- *   neccesary for the time limit.
+ *   This is a recommended problem in CP3 and suggested using maps to record snowflake size.
+ *   I used STL map.
  *
  * Used Resources:
  *   Competitive Programming 3 by Steven Halim and Felix Halam
- *   http://www.mathblog.dk/disjoint-set-data-structure/
  *
  * I hereby certify that I have produced the following solution myself
  * using the resources listed above in accordance with the CMPUT 403
@@ -25,3 +21,5 @@
  *
  * --- Tamara Bain
  */
+
+ int main() {mv }

@@ -1,4 +1,4 @@
-/* UVa problem: 10550
+/* UVa problem: 10550 - Combination Lock
  *
  * Topic: Other
  *

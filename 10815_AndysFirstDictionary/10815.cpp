@@ -1,4 +1,4 @@
-/* UVa problem: 10815
+/* UVa problem: 10815 - Andy's First Dictionary
  *
  * Topic: Data Structures
  *

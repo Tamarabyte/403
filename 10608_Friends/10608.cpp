@@ -1,4 +1,4 @@
-/* UVa problem: 10608
+/* UVa problem: 10608 - Friends
  *
  * Topic: Data Structures
  *
@@ -24,7 +24,6 @@
  */
 
 #include <cstdio>
-#include <set>
 
 using namespace std;
 
@@ -54,8 +53,8 @@ struct disjoint_set {
 
   //destructor
   ~disjoint_set() {
-    delete reps;
-    delete sizes;
+    delete[] reps;
+    delete[] sizes;
   }
 
   int find_rep(int element) {
