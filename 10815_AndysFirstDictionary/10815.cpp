@@ -33,47 +33,47 @@ using namespace std;
 
 int main() {
 
-  string substring, word;
-  set<string> dict;
+   string substring, word;
+   set<string> dict;
 
-  while(cin >> word) {
+   while(cin >> word) {
 
-    int len = word.size();
+      int len = word.size();
 
-    // transform to lowercase
-    std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+      // transform to lowercase
+      std::transform(word.begin(), word.end(), word.begin(), ::tolower);
 
-    // iterate through each character
-    // processing strings to store
-    for (int i = 0; i < len; i++) {
+      // iterate through each character
+      // processing strings to store
+      for (int i = 0; i < len; i++) {
 
-        if (word[i] >= 'a' && word[i] <='z'){
+         if (word[i] >= 'a' && word[i] <='z') {
 
-          if(i==len-1)
-            dict.insert(word);
-        }
-        else {
+            if(i==len-1)
+               dict.insert(word);
+         }
+         else {
 
-          // store the previous string if neccesary
-          if(i) {
-            substring = word.substr(0, i);
-            dict.insert(substring);
-          }
+            // store the previous string if neccesary
+            if(i) {
+               substring = word.substr(0, i);
+               dict.insert(substring);
+            }
 
-          // if we've reached the end of the word then stop
-          if(i==len-1)
-            break;
+            // if we've reached the end of the word then stop
+            if(i==len-1)
+               break;
 
-          // our word is the next substring, reset start and end
-          // positions for the for loop
-          word = word.substr(i+1, len);
-          i = -1;
-          len = word.length();
-        }
-    }
+            // our word is the next substring, reset start and end
+            // positions for the for loop
+            word = word.substr(i+1, len);
+            i = -1;
+            len = word.length();
+         }
+      }
 
-  }
+   }
 
-  for(auto it : dict)
-    cout << it << "\n";
+   for(auto it : dict)
+      cout << it << "\n";
 }

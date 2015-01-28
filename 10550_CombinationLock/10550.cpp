@@ -26,31 +26,31 @@
 
 int main() {
 
-  int start, num1, num2, num3, degrees;
+   int start, num1, num2, num3, degrees;
 
-  while (scanf("%d %d %d %d", &start, &num1, &num2, &num3), (start || num1 || num2 || num3)) {
+   while (scanf("%d %d %d %d", &start, &num1, &num2, &num3), (start || num1 || num2 || num3)) {
 
-    // Each combination will have full clockwise turns and one counter-clockwise turn
-    degrees = 1080;
+      // Each combination will have full clockwise turns and one counter-clockwise turn
+      degrees = 1080;
 
-    // first number
-    if (num1 > start)
-      degrees += (40-num1+start) * 9;
-    else
-      degrees += (start-num1) * 9;
+      // first number
+      if (num1 > start)
+         degrees += (40-num1+start) * 9;
+      else
+         degrees += (start-num1) * 9;
 
-    // second number
-    if (num2 < num1)
-      degrees += (40-num1+num2) * 9;
-    else
-      degrees += (num2-num1) * 9;
+      // second number
+      if (num2 < num1)
+         degrees += (40-num1+num2) * 9;
+      else
+         degrees += (num2-num1) * 9;
 
-    // third number
-    if (num3 > num2)
-      degrees += (40-num3+num2) * 9;
-    else
-      degrees += (num2-num3) * 9;
+      // third number
+      if (num3 > num2)
+         degrees += (40-num3+num2) * 9;
+      else
+         degrees += (num2-num3) * 9;
 
-    printf("%d\n", degrees);
-  }
+      printf("%d\n", degrees);
+   }
 }
