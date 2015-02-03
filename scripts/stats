@@ -1,0 +1,191 @@
+#! /bin/bash
+
+Count_tag () {
+	local dir="$1"
+	local content="$2"
+	local tag="$3"
+	local tagcount="$4"
+	local listofprops="$5"
+	if [[ $( grep $tag <<< "$content" ) != "" ]]; then
+		eval $6=$(expr $tagcount + 1)
+		eval $7='"$listofprops$dir "'
+		return 1
+	else
+		return 0
+	fi
+}
+
+
+	RED='\033[1;31m'          # Red
+	GREEN='\033[1;32m'        # Green
+	ORANGE='\033[0;33m'       # Yellow
+	BLUE='\033[1;34m'         # Blue
+	PURPLE='\033[0;35m'       # Purple
+	CYAN='\033[1;36m'         # Cyan
+	WHITE='\033[0;37m'  
+
+STAG='.solved.tag'
+TTAG='.trivial.tag'
+NTAG='.non-tri.tag'
+
+TRIV=0
+TSOL=0
+NONT=0
+NSOL=0
+
+DataStTRI=0
+StringTRI=0
+SortinTRI=0
+ArithmTRI=0
+CombinTRI=0
+NumberTRI=0
+BacktrTRI=0
+GraphTTRI=0
+GraphATRI=0
+DynProTRI=0
+GeometTRI=0
+OtherTRI=0
+DataStSOL=0
+StringSOL=0
+SortinSOL=0
+ArithmSOL=0
+CombinSOL=0
+NumberSOL=0
+BacktrSOL=0
+GraphTSOL=0
+GraphASOL=0
+DynProSOL=0
+GeometSOL=0
+OtherSOL=0
+
+DataStTAG=".DataStructures.tag"
+StringTAG=".Strings.tag"
+SortinTAG=".Sorting.tag"
+ArithmTAG=".Arithmetic.tag"
+CombinTAG=".Combinatorics.tag"
+NumberTAG=".NumberTheory.tag"
+BacktrTAG=".Backtracking.tag"
+GraphTTAG=".GraphTraversal.tag"
+GraphATAG=".GraphAlforithms.tag"
+DynProTAG=".DynamicProgramming.tag"
+GeometTAG=".Geometry.tag"
+OtherTAG=".Other.tag"
+
+DataStLST=""
+StringLST=""
+SortinLST=""
+ArithmLST=""
+CombinLST=""
+NumberLST=""
+BacktrLST=""
+GraphTLST=""
+GraphALST=""
+DynProLST=""
+GeometLST=""
+OtherLST=""
+
+for dir in $(ls); do
+	cont=$(ls -a $dir)
+	found=""
+	if [[ $( grep $STAG <<< "$cont" ) != "" ]]; then
+		Count_tag "$dir" "$cont" $DataStTAG $DataStSOL "$DataStLST" 'DataStSOL' 'DataStLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $StringTAG $StringSOL "$StringLST" 'StringSOL' 'StringLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $SortinTAG $SortinSOL "$SortinLST" 'SortinSOL' 'SortinLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $ArithmTAG $ArithmSOL "$AtirhmLST" 'ArithmSOL' 'AtirhmLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $CombinTAG $CombinSOL "$CombinLST" 'CombinSOL' 'CombinLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $NumberTAG $NumberSOL "$NumberLST" 'NumberSOL' 'NumberLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $BacktrTAG $BacktrSOL "$BacktrLST" 'BacktrSOL' 'BacktrLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GraphTTAG $GraphTSOL "$GraphTLST" 'GraphTSOL' 'GraphTLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GraphATAG $GraphASOL "$GraphALST" 'GraphASOL' 'GraphALST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $DynProTAG $DynProSOL "$DynProLST" 'DynProSOL' 'DynProLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GeometTAG $GeometSOL "$GeometLST" 'GeometSOL' 'GeometLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $OtherTAG  $OtherSOL  "$OtherLST"  'OtherSOL'  'OtherLST'
+		fi fi fi fi fi fi fi fi fi fi fi
+		if [[ $( grep $NTAG <<< "$cont" ) != "" ]]; then
+			NONT=$(expr $NONT + 1)
+			NSOL=$(expr $NSOL + 1)
+		fi
+		if [[ $( grep $TTAG <<< "$cont" ) != "" ]]; then
+			TRIV=$(expr $TRIV + 1)
+			TSOL=$(expr $TSOL + 1)
+		fi
+	else
+		Count_tag "$dir" "$cont" $DataStTAG $DataStTRI "$DataStLST" 'DataStTRI' 'DataStLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $StringTAG $StringTRI "$StringLST" 'StringTRI' 'StringLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $SortinTAG $SortinTRI "$SortinLST" 'SortinTRI' 'SortinLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $ArithmTAG $ArithmTRI "$AtirhmLST" 'ArithmTRI' 'AtirhmLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $CombinTAG $CombinTRI "$CombinLST" 'CombinTRI' 'CombinLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $NumberTAG $NumberTRI "$NumberLST" 'NumberTRI' 'NumberLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $BacktrTAG $BacktrTRI "$BacktrLST" 'BacktrTRI' 'BacktrLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GraphTTAG $GraphTTRI "$GraphTLST" 'GraphTTRI' 'GraphTLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GraphATAG $GraphATRI "$GraphALST" 'GraphATRI' 'GraphALST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $DynProTAG $DynProTRI "$DynProLST" 'DynProTRI' 'DynProLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $GeometTAG $GeometTRI "$GeometLST" 'GeometTRI' 'GeometLST'
+		if (( $? == 0 )); then
+			Count_tag "$dir" "$cont" $OtherTAG  $OtherTRI  "$OtherLST"  'OtherTRI' 'OtherSOL'
+		fi fi fi fi fi fi fi fi fi fi fi
+		if [[ $( grep $NTAG <<< "$cont" ) != "" ]]; then
+			NONT=$(expr $NONT + 1)
+		fi
+		if [[ $( grep $TTAG <<< "$cont" ) != "" ]]; then
+			TRIV=$(expr $TRIV + 1)
+		fi
+	fi
+done
+
+TOTA=$(expr $TRIV + $NONT)
+TOTS=$(expr $TSOL + $NSOL)
+
+TPER=$(expr $TRIV \* 100)
+NPER=$(expr $NONT \* 100)
+TSPE=$(expr $TSOL \* 100)
+NSPE=$(expr $NSOL \* 100)
+TOTAP=$(expr $TOTA \* 100)
+TOTSP=$(expr $TOTS \* 100)
+
+TPER=$(expr $TPER / 30)
+NPER=$(expr $NPER / 30)
+TSPE=$(expr $TSPE / 30)
+NSPE=$(expr $NSPE / 30)
+TOTAP=$(expr $TOTAP / 60)
+TOTSP=$(expr $TOTSP / 60)
+
+printf "\nSolved:\n"
+printf "Trivial:    ${GREEN} %2.2d / 30\t%3.3d%%\n${WHITE}" $TSOL $TSPE
+printf "Non-Trivial:${GREEN} %2.2d / 30\t%3.3d%%\n${WHITE}" $NSOL $NSPE
+printf "Total:      ${RED} %2.2d / 60\t%3.3d%%\n${WHITE}" $TOTS $TOTSP
+printf "${WHITE}\n"
+
+printf "Data Structures:     ${BLUE}S: %s${WHITE}\n"  $DataStSOL
+printf "String:              ${BLUE}S: %s${WHITE}\n"  $StringSOL
+printf "Sorting:             ${BLUE}S: %s${WHITE}\n"  $SortinSOL
+printf "Arithmetic:          ${BLUE}S: %s${WHITE}\n"  $ArithmSOL
+printf "Combinatorics:       ${BLUE}S: %s${WHITE}\n"  $CombinSOL
+printf "Number Theory:       ${BLUE}S: %s${WHITE}\n"  $NumberSOL
+printf "Backtracking:        ${BLUE}S: %s${WHITE}\n"  $BacktrSOL
+printf "Graph Traversal:     ${BLUE}S: %s${WHITE}\n"  $GraphTSOL
+printf "Graph Algorithms:    ${BLUE}S: %s${WHITE}\n"  $GraphASOL
+printf "Dynamic Programming: ${BLUE}S: %s${WHITE}\n"  $DynProSOL
+printf "Geometry:            ${BLUE}S: %s${WHITE}\n"  $GeometSOL
+printf "Other:               ${BLUE}S: %s${WHITE}\n\n"   $OtherSOL 

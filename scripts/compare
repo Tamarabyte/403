@@ -1,0 +1,5 @@
+#!/bin/bash
+
+touch output.txt
+./program < input.txt > output.txt
+colordiff output.txt expected.txt
