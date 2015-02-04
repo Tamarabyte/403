@@ -1,4 +1,4 @@
-/* UVa problem: 665 - False Coin
+/* UVa problem: 665
  *
  * Topic: Data Structures
  *
@@ -21,8 +21,6 @@
  * collaboration policy.
  *
  * --- Tamara Bain
- *
- *  Language: C++11
  */
 
 #include <cstdio>

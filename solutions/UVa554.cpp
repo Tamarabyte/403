@@ -1,4 +1,4 @@
-/* UVa problem: 554 - Ceaser Cipher
+/* UVa problem: 554 Ceaser Cipher
  *
  * Topic: String Processing
  *
@@ -24,8 +24,6 @@
  * collaboration policy.
  *
  * --- Tamara Bain
- *
- *  Language: C++11
  */
  
  #include <cstdlib>

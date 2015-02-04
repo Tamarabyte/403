@@ -1,4 +1,4 @@
-/* UVa problem: 492 - Pig-Latin
+/* UVa problem: 492 Pig-Latin
  *
  * Topic: String Processing
  *
@@ -20,8 +20,6 @@
  * collaboration policy.
  *
  * --- Tamara Bain
- *
- *  Language: C++11
  */
 
 #include<iostream>

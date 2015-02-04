@@ -20,8 +20,6 @@
  * collaboration policy.
  *
  * --- Tamara Bain
- *
- *  Language: C++11
  */
 
 #include <cstdio>
