@@ -1,10 +1,11 @@
 Overview of Submission
 ======================
 
+UVA Username: tambam
 
-Trivial: 3
-Non-Trivial: 5
-Total 8
+Trivial: 4
+Non-Trivial: 6
+Total 10
 
 
 Other: 1
@@ -21,8 +22,10 @@ Data Structures: 5
 10158 - War - Non-Trivial (74.63%)
 
 
-Strings: 2
+Strings: 4
 --------
+11837 - Musical Plagiarism - Trivial [Mandatory]
 492 - Pig-Latin - Non-Trivial (76.52%)
 554 - Caesar Cypher - Non-Trivial (29.93%)
+11475 - Extend to Palindrome - Non-Trivial (77.65%)
 
