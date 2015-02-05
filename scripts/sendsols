@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tar -czvf solutions.tgz solutions
+scp solutions.tgz tbain@ohaton.cs.ualberta.ca:solutions.tgz
+ssh tbain@ohaton.cs.ualberta.ca
+astep -c c403 -p sol solutions.tgz

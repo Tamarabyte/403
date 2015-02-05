@@ -49,9 +49,6 @@ void fillKMPTable(int* kmpTable, const char* pattern, int len) {
         ++j;
         ++i;
         
-        if (i > len)
-            exit(1);
-        
         kmpTable[i] = j;
     }
 }
@@ -67,16 +64,12 @@ int kmpSearch(const char* word, const char* reversed, int* table, int len) {
             j = table[j];
         ++i;
         ++j;
-        if (j > len)
-            exit(0);
         
         if (j == len) {
             return len;
         }
     }
-    if (j >= len)
-        exit(0);
-        
+
     return j;
 }
 
@@ -98,9 +91,6 @@ void printArray(char *arr, int length) {
        
       // get the reversed string
       reversed = string(word.rbegin(), word.rend());
-       
-       if (reversed.length() != word.length())
-           exit(0);
 
       // fill the kmp table for kmb search
       kmpTable = new int[word.length()+1];

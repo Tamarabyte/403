@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import os
 
 def help():
     print("uvainit [number] [name]", file=sys.stderr)
@@ -10,8 +11,9 @@ def touch(path):
         os.utime(path, None)
         
 def makeFile(dir, file):
+    path = dir + "/" + file;
     with open(path, 'w') as f:
-        print("--> {}:\n".format(file))
+        print("--> {}:".format(file))
         input_str = sys.stdin.read()
         f.write(input_str)
         
@@ -22,7 +24,7 @@ def makeTemplate(number, name, dir, filename):
         "Sorting" : ".Sorting.tag", 
         "Arithmetic" : ".Arithmetic.tag",
         "Combinatorics" : ".Combinatorics.tag", 
-        "Number Thoery" : ".NumberTheory.tag", 
+        "Number Theory" : ".NumberTheory.tag", 
         "Backtracking" : ".Backtracking.tag", 
         "Graph Traversal" : ".GraphTraversal.tag", 
         "Graph Algorithms" : ".GraphAlgorithms.tag", 
@@ -32,25 +34,39 @@ def makeTemplate(number, name, dir, filename):
         }
     
     difficulties = {
-        "trivial" :  ".trivial.tag",
-        "non-trivial" : ".non-tri.tag" 
+        "T" :  ".trivial.tag",
+        "N" : ".non-tri.tag" 
     }
     
+    topic = None
     while topic not in topics.keys():
         topic = input("Topic: ")
-    
     touch(dir + "/" + topics[topic])
-        
-    while difficulty not in ["trivial", "non-trivial"]:
-        difficulty = input("Difficulty (trivial/non-trivial): ")
     
+    difficulty  = None
+    while difficulty not in ["trivial", "non-trivial"]:
+        difficulty = input("Difficulty (T/N): ")
     touch(dir + "/" + difficulties[difficulty])
     
-    template = """/* UVa problem: {} - {}
+    percentage  = None
+    while percentage is None:
+        percentage = input("Percent Solved: ")
+    
+    with open(dir + "/" + ".percent.tag") as f:
+        f.write(percentage + "\n")
+    
+    mandatory = None
+    while mandatory not in ["Y", "N"]:
+        mandatory = input("Mandatory? (Y/N): ")
+    
+    if mandatory == "Y":
+        touch(dir + "/" + ".mandatory.tag")
+    
+    template = """/* UVa problem: {number} - {name}
  *
- * Topic: {}
+ * Topic: {topic}
  *
- * Level: trivial/non-trivial: {}
+ * Level: trivial/non-trivial: {difficulty}
  *
  * Brief problem description:
  *
@@ -64,19 +80,21 @@ def makeTemplate(number, name, dir, filename):
  * collaboration policy.
  *
  * --- Tamara Bain
+ *
+ * Language: C++11
  */
  
 #include <cstdio>
 using namespace std;
 
-int main() {
+int main() {{
     
-}""".format(number, name, topic, difficulty)
+}}""".format(**locals())
  
     with open(dir + filename, 'w') as f:
-        f.write(itemplate)
+        f.write(template)
 
-def initiate(number):
+def initiate(number, name):
     dir = os.getcwd() + "/" + str(number) + "_" + name
     
     # create the directory
@@ -91,15 +109,16 @@ def initiate(number):
     makeFile(dir, "expected.txt")
     makeTemplate(number, name, dir, "/UVa" + str(number) + ".cpp")
     
-    if os.stat(number + "_" + name)
-    mkdir
-    
 def main():
     if (len(sys.argv) != 3):
         help()
         sys.exit(1)
     
-    initiate(sys.argv[1])
+    if (!sys.arv[1].isdigit()):
+        help()
+        sys.exit()
+        
+    initiate(sys.argv[1], sys.argv[2])
 
 			
 if __name__ == "__main__":

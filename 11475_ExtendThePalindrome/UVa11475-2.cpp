@@ -31,47 +31,9 @@
 #include <iostream>
 #include <string>
 #include <iterator>
+#include <unordered_map>
 
 using namespace std;
-
-
-// create the KMP Table
-// Code adapted from Competitive Programming 3
-void fillKMPTable(int* kmpTable, const char* pattern, int len) {
-    int i = 0;
-    int j = -1;
-
-    kmpTable[0] = -1;
-    while (i < len) {
-        while (j >=0 && pattern[i] != pattern[j]) {
-            j = kmpTable[j];
-        }
-        ++j;
-        ++i;
-        
-        kmpTable[i] = j;
-    }
-}
-
-// use KMP Search
-// Code adapted from Competitive Programming 3
-int kmpSearch(const char* word, const char* reversed, int* table, int len) {
-    int i = 0;
-    int j = 0;
-
-    while (i < len) {
-        while (j >= 0 && word[i] != reversed[j])
-            j = table[j];
-        ++i;
-        ++j;
-        
-        if (j == len) {
-            return len;
-        }
-    }
-
-    return j;
-}
 
 // for debugging purposes
 void printArray(char *arr, int length) {
@@ -84,7 +46,8 @@ void printArray(char *arr, int length) {
  int main() {
 
    string word, reversed, palindrome;
-   int* kmpTable;
+   int overlap; 
+   unordered_map<string, int> suffix_map;
 
    // read strings until EOF
    while(cin >> word) {
@@ -92,24 +55,31 @@ void printArray(char *arr, int length) {
       // get the reversed string
       reversed = string(word.rbegin(), word.rend());
 
-      // fill the kmp table for kmb search
-      kmpTable = new int[word.length()+1];
-      fillKMPTable(kmpTable, reversed.c_str(), word.length());
-
-      // get the last position we matched in the reversed string at the end
-      // of the original stringword.length()-overlap_end
-      int overlap_end = kmpSearch(word.c_str(), reversed.c_str(), kmpTable, word.length());
-
+       for (int i = 0; i < (int)word.length(); ++i) {
+         suffix_map[word.substr(i, word.length()-i)] = word.length()-i;
+      }
+       
+       overlap = 0;
+       for (int i = 0; i < (int)reversed.length(); ++i) {
+           auto it = suffix_map.find(reversed.substr(0, reversed.length()-i));
+           if (it != suffix_map.end()) {
+               overlap = it -> second;
+               break;
+           }
+       }
       // if our reversed string overlaps completely then we already have a palindrone
       // otherwise we need to append to remainder to the original string
-      palindrome = word.append(reversed, overlap_end, word.length()-overlap_end);
-      if (overlap_end < (int)word.length())
+      palindrome = word.append(reversed, overlap, word.length()-overlap);
+      if (overlap < (int)word.length())
          cout << palindrome << endl;
       else
          cout << word << endl;;
-
-      delete[] kmpTable;
+      
+      suffix_map.clear();
    }
    return 0;
 }
 
+//gorgeousness
+//gorgeousnes s sensuoegrog
+//gorgeousnes sensuoegrog
