@@ -44,7 +44,7 @@ def makeTemplate(number, name, dir, filename):
     touch(dir + "/" + topics[topic])
     
     difficulty  = None
-    while difficulty not in ["trivial", "non-trivial"]:
+    while difficulty not in ["T", "N"]:
         difficulty = input("Difficulty (T/N): ")
     touch(dir + "/" + difficulties[difficulty])
     
@@ -52,7 +52,8 @@ def makeTemplate(number, name, dir, filename):
     while percentage is None:
         percentage = input("Percent Solved: ")
     
-    with open(dir + "/" + ".percent.tag") as f:
+    touch(dir + "/" + ".percent.tag")
+    with open(dir + "/" + ".percent.tag", "w") as f:
         f.write(percentage + "\n")
     
     mandatory = None
@@ -114,7 +115,7 @@ def main():
         help()
         sys.exit(1)
     
-    if (!sys.arv[1].isdigit()):
+    if (not sys.argv[1].isdigit()):
         help()
         sys.exit()
         

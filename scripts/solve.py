@@ -88,8 +88,8 @@ def processSolve(num, name):
         
         digit = re.search(topic + ": (\d+)\n--------------------\n", readme)
         if digit is None:
-            readme.append("\n" + topic + ": 1\n--------------------\n")
-            readme.append(line);
+            readme += "\n\n" + topic + ": 1\n--------------------\n"
+            readme += line;
         else:
             digit = int(digit.group(1)) + 1;
             readme = re.sub(topic + ": \d+\n--------------------\n", topic + ": %d\n--------------------\n%s"%(digit, line), readme)

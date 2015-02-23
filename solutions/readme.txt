@@ -3,9 +3,9 @@ Overview of Submission
 
 UVA Username: tambam
 
-Trivial: 4
-Non-Trivial: 6
-Total: 10
+Trivial: 5
+Non-Trivial: 7
+Total: 12
 
 
 Other: 1
@@ -22,9 +22,15 @@ Data Structures: 5
 10158 - War - Non-Trivial (74.63%)
 
 
-Strings: 4
+Strings: 5
 --------------------
+11512 - GATTACA - Trivial [Mandatory]
 11837 - Musical Plagiarism - Trivial [Mandatory]
 492 - Pig-Latin - Non-Trivial (76.52%)
 554 - Caesar Cypher - Non-Trivial (29.93%)
 11475 - Extend to Palindrome - Non-Trivial (77.65%)
+
+
+Sorting: 1
+--------------------
+10026 - ShoemakersProblem - Non-Trivial [Mandatory] 78.63%
