@@ -1,8 +1,8 @@
 /* UVa problem: 11491 - ErasingAndWinning
  *
- * Topic: Ohter
+ * Topic: Other
  *
- * Level: trivial/non-trivial: N
+ * Level: non-trivial
  *
  * Brief problem description:
  *  Delete X numbers from a number to end up with the biggest possible number. 

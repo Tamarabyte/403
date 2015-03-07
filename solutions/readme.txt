@@ -4,8 +4,8 @@ Overview of Submission
 UVA Username: tambam
 
 Trivial: 9
-Non-Trivial: 11
-Total: 20
+Non-Trivial: 12
+Total: 21
 
 
 Other: 2
@@ -45,8 +45,9 @@ Arithmetic: 2
 10931 - Parity - Trivial
 
 
-Backtracking: 3
+Backtracking: 4
 --------------------
+11195 - AnotherNQueenProblem - Non-Trivial [Mandatory] (59.81)%
 1098 - RobotsOnIce - Non-Trivial (55.45)%
 167 - TheSultansSuccessors - Trivial
 729 - HammingDistanceProblem - Non-Trivial (77.03%)

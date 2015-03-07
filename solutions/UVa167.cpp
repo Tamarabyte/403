@@ -2,7 +2,7 @@
  *
  * Topic: Backtracking
  *
- * Level: trivial/non-trivial: T
+ * Level: trivial
  *
  * Brief problem description:
  *    8 queens problemm, but each square has a value. You want

@@ -2,7 +2,7 @@
  *
  * Topic: Arithmetic
  *
- * Level: trivial/non-trivial: T
+ * Level: trivial
  *
  * Brief problem description:
  *  Count the number of 1's in a numbers binary representation.

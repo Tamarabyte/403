@@ -2,7 +2,7 @@
  *
  * Topic: Strings
  *
- * Level: trivial/non-trivial: trivial
+ * Level: trivial
  *
  * Brief problem description:
  * Find the longest repeated substring in a string and output

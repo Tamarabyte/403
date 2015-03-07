@@ -51,6 +51,7 @@ def makeTemplate(number, name, dir, filename):
     if float(percentage) < 80:
         difficulty = "N"
     touch(dir + "/" + difficulties[difficulty])
+    difficulty = "trivial" if difficulty == "T" else "non-trivial"
      
     touch(dir + "/" + ".percent.tag")
     with open(dir + "/" + ".percent.tag", "w") as f:
@@ -67,7 +68,7 @@ def makeTemplate(number, name, dir, filename):
  *
  * Topic: {topic}
  *
- * Level: trivial/non-trivial: {difficulty}
+ * Level: {difficulty}
  *
  * Brief problem description:
  *

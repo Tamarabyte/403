@@ -2,7 +2,7 @@
  *
  * Topic: Arithmetic
  *
- * Level: trivial/non-trivial: T
+ * Level: trivial
  *
  * Brief problem description:
  *   Find the sum of all GCDs in an array.

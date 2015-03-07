@@ -2,7 +2,7 @@
  *
  * Topic: Sorting
  *
- * Level: trivial/non-trivial: T
+ * Level: trivial
  *
  * Brief problem description:
  *   Count the number of times flips are needed to sort a set of numbers by flipping adjacent elements.

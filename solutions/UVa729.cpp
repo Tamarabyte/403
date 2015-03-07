@@ -2,7 +2,7 @@
  *
  * Topic: Backtracking
  *
- * Level: trivial/non-trivial: N
+ * Level: non-trivial
  *
  * Brief problem description:
  *   Given a hamming distance and a size, output in lexigraphical order all binary strings
