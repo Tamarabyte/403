@@ -43,15 +43,15 @@ def makeTemplate(number, name, dir, filename):
         topic = input("Topic: ")
     touch(dir + "/" + topics[topic])
     
-    difficulty  = None
-    while difficulty not in ["T", "N"]:
-        difficulty = input("Difficulty (T/N): ")
-    touch(dir + "/" + difficulties[difficulty])
-    
     percentage  = None
     while percentage is None:
         percentage = input("Percent Solved: ")
     
+    difficulty = "T"
+    if float(percentage) < 80:
+        difficulty = "N"
+    touch(dir + "/" + difficulties[difficulty])
+     
     touch(dir + "/" + ".percent.tag")
     with open(dir + "/" + ".percent.tag", "w") as f:
         f.write(percentage + "\n")
@@ -106,9 +106,9 @@ def initiate(number, name):
         sys.exit(1)
     
     # create the files
+    makeTemplate(number, name, dir, "/UVa" + str(number) + ".cpp")
     makeFile(dir, "input.txt")
     makeFile(dir, "expected.txt")
-    makeTemplate(number, name, dir, "/UVa" + str(number) + ".cpp")
     
 def main():
     if (len(sys.argv) != 3):

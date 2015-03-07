@@ -83,7 +83,7 @@ def processSolve(num, name):
         
         line = "{num} - {name} - {diff}{mandatory}".format(**locals())
         if diff == "Non-Trivial":
-            line += " {percent}".format(**locals())
+            line += " ({percent})%".format(**locals())
         line += "\n"
         
         digit = re.search(topic + ": (\d+)\n--------------------\n", readme)
