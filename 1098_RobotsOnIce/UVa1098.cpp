@@ -2,7 +2,7 @@
  *
  * Topic: Backtracking
  *
- * Level: trivial/non-trivial: N
+ * Level: non-trivial
  *
  * Brief problem description:
  *   Find all possible paths that traverse the entire grid and stop

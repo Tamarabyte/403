@@ -2,7 +2,7 @@
  *
  * Topic: Sorting
  *
- * Level: trivial/non-trivial: N
+ * Level: non-trivial
  *
  * Brief problem description:
  *   You are given a list of numbers and you have to combine them to get the largest number.

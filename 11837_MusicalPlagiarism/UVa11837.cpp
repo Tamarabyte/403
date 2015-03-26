@@ -1,4 +1,4 @@
-/* UVa problem: 11837 - Musical Plaigiarism 
+/* UVa problem: 11837 - Musical Plaigiarism
  *
  * Topic: Strings
  *
@@ -11,7 +11,7 @@
  * First I transformed each set of notes to an array of digits where each digit is the number
  * of semitones difference between the note and the previous note. Then I used
  * the KMP algorithm (as presented in competitive programming 3) to compare
- * the musical snippet array with the array for the entire score. 
+ * the musical snippet array with the array for the entire score.
  *
  * Used Resources:
  *   Competitive Programming 3 by Steven Halim and Felix Halam
@@ -25,19 +25,19 @@
  *
  *  Language: C++11
  */
- 
+
 #include <cstdio>
-#include <iostream>
 #include <map>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
+// create the KMP Table
+// Code adapted from Competitive Programming 3
 void fillKMPTable(int* kmpTable, int* snippet, int len) {
     int i = 0;
     int j = -1;
-    
+
     kmpTable[0] = -1;
     while (i < len) {
         while (j >=0 && snippet[i] != snippet[j])
@@ -48,21 +48,26 @@ void fillKMPTable(int* kmpTable, int* snippet, int len) {
     }
 }
 
+// use KMP Search
+// Code adapted from Competitive Programming 3
 void kmpSearch(int* song, int* snippet, int* table, int song_len, int snip_len) {
     int i = 0;
     int j = 0;
 
-    if (snip_len <= 1) {
+    if (snip_len == 1) {
         printf("S\n");
         return;
     }
-    
-    while (i < song_len) {
+
+    // we care 1 less than song size
+    // because we only care about the differences
+    // between notes
+    while (i < song_len-1) {
         while (j >= 0 && song[i] != snippet[j])
             j = table[j];
         ++i;
         ++j;
-        if (j == snip_len) {
+        if (j == snip_len-1) {
             printf("S\n");
             return;
         }
@@ -70,51 +75,47 @@ void kmpSearch(int* song, int* snippet, int* table, int song_len, int snip_len) 
     printf("N\n");
 }
 
-// print semitone array for debugging
-void printSemitoneArray(int *arr, int length) {
-    printf("[");
-    for (int i = 0; i < length; ++i)
-        printf("%d ", arr[i]);
-    printf("]\n");
-}
-
+// translate the input into semitone differences
 void getSemitoneDifferences(int *song, int length) {
-    
-    map<string, int> notes = {
-        {"A", 0},
-        {"A#", 1}, {"Bb", 1}, 
-        {"B", 2}, {"Cb", 2},
-        {"B#", 3}, {"C", 3}, 
-        {"C#", 4}, {"Db", 4}, 
-        {"D", 5}, 
-        {"D#", 6}, {"Eb", 6},
-        {"E", 7}, {"Fb", 7}, 
-        {"E#", 8}, {"F", 8},
-        {"F#", 9}, {"Gb", 9},
-        {"G", 10},
-        {"G#", 11}, {"Ab", 11}
+
+    // spaces between our notes
+    map<char, int> notes = {
+        {'A', 0},
+        {'B', 2},
+        {'C', 3},
+        {'D', 5},
+        {'E', 7},
+        {'F', 8},
+        {'G', 10},
     };
-    
-    string note;
+   // modifier values
+   map<char, int> modifiers = {
+        {'#', 1},
+        {'b', -1},
+        {'\0', 0}
+    };
+
+
+    char note[3];
     int current, prev, diff;
-    
+    prev = 0;
+
     for (int i = 0; i < length; ++i) {
-        cin >> note;
-        current = notes[note];
-        
+        scanf("%s", note);
+
+        current = notes[note[0]] + modifiers[note[1]];
+        current = (current + 12) % 12;
+
         // record the first difference in semitones as 0
         if (i == 0) {
             prev = current;
             song[0] = 0;
             continue;
         }
-        
-        diff = abs(current - prev);
-        if (diff > 6)
-            diff = 12 - diff;
-        
-        song[i] = diff;
+
+        diff = (current - prev + 12) % 12;
         prev = current;
+        song[i-1] = diff;
     }
 }
 
@@ -122,31 +123,21 @@ int main() {
     int *song;
     int *snippet;
     int *kmpTable;
-    
-    int song_len, snippet_len;
-    
-    while (1) {
-        cin >> song_len;
-        cin >> snippet_len;
 
-        if (!snippet_len && !song_len)
-            break;
-        
-        printf("%d, %d", song_len, snippet_len);
+    int song_len, snippet_len;
+
+    while (scanf("%d %d", &song_len, &snippet_len) && (song_len || snippet_len)) {
+        // read the song length and snippet length
         song = new int[song_len];
         snippet = new int[snippet_len];
+        // create the kmp table
         kmpTable = new int[snippet_len + 1];
-        
+
         getSemitoneDifferences(song, song_len);
         getSemitoneDifferences(snippet, snippet_len);
-        
+
         fillKMPTable(kmpTable, snippet, snippet_len);
-        
-        //for debugging
-        // printSemitoneArray(song, song_len);
-        // printSemitoneArray(snippet, snippet_len);
-        // printSemitoneArray(kmpTable, snippet_len+1);
-        
+
         kmpSearch(song, snippet, kmpTable, song_len, snippet_len);
 
         delete[] song;

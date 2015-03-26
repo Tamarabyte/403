@@ -2,7 +2,7 @@
  *
  * Topic: Sorting
  *
- * Level: trivial/non-trivial: N
+ * Level: non-trivial
  *
  * Brief problem description:
  *   For each job the number of days it takes to complete and a 
