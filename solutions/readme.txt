@@ -4,12 +4,13 @@ Overview of Submission
 UVA Username: tambam
 
 Trivial: 9
-Non-Trivial: 13
-Total: 22
+Non-Trivial: 15
+Total: 24
 
 
-Other: 2
+Other: 3
 --------------------
+668 - Parliament - Non-Trivial (58.37%)
 11491 - ErasingAndWinning - Non-Trivial (64.82%)
 10550 - Combination Lock - Trivial
 
@@ -32,8 +33,9 @@ Strings: 5
 11475 - Extend to Palindrome - Non-Trivial (77.65%)
 
 
-Sorting: 4
+Sorting: 5
 --------------------
+612 - DNASorting - Non-Trivial (62.54%)
 11858 - FroshWeek - Non-Trivial (65.60%)
 10905 - ChildrensGame - Non-Trivial (73.28%)
 10327 - FlipSort - Trivial [Mandatory]
