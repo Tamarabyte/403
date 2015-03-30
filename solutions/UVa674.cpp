@@ -5,16 +5,16 @@
  * Level: trivial
  *
  * Brief problem description:
- *   Given a value and the set of coin denominations 1, 2, 10, 25, and 50
- *   determine the number of ways to make change for the given value.
+ *   Given a value and the set of coin denominations determine the number of possible
+ *   combinations of denominations that can make up the given value.
  *
  * Solution Summary:
  *   Use dynamic programming (I used the bottom up approach). For
  *   each step in 0 .. value, the number of possible ways to make
  *   change is the number of ways to make change with the coin +
  *   number of ways to make change without the coin. I could have further
- *   optimized and made the table smaller (max amount you need to look back
- *   is 50.
+ *   optimized and made the table smaller (we only need an array of N
+ *   if we calculate coins one at a time).
  *
  * Used Resources:
  *   Competitive Programming 3 by Steven Halim and Felix Halam

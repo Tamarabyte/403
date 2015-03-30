@@ -3,8 +3,8 @@ Overview of Submission
 
 UVA Username: tambam
 Trivial: 10
-Non-Trivial: 15
-Total: 25
+Non-Trivial: 16
+Total: 26
 
 
 Other: 3
@@ -56,6 +56,7 @@ Backtracking: 4
 
 
 
-Dynamic Programming: 1
+Dynamic Programming: 2
 --------------------
+357 - LetMeCountTheWays - Non-Trivial (75.73%)
 674 - CoinChange - Trivial [Mandatory]
