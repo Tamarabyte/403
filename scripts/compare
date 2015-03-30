@@ -1,5 +1,6 @@
 #!/bin/bash
 
+g++ -std=c++11 -Wall -Wextra *.cpp
 touch output.txt
-a.out < input.txt > output.txt
+./a.out < input.txt > output.txt
 colordiff output.txt expected.txt

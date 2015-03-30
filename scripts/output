@@ -1,5 +1,5 @@
 #!/bin/bash
 
-g++ -std=c++11 *.cpp
+g++ -std=c++11 -Wall -Wextra *.cpp
 chmod u+x a.out
 ./a.out < input.txt

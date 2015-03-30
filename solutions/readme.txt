@@ -2,10 +2,9 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-
-Trivial: 9
+Trivial: 10
 Non-Trivial: 15
-Total: 24
+Total: 25
 
 
 Other: 3
@@ -54,3 +53,9 @@ Backtracking: 4
 1098 - RobotsOnIce - Non-Trivial (55.45%)
 167 - TheSultansSuccessors - Trivial
 729 - HammingDistanceProblem - Non-Trivial (77.03%)
+
+
+
+Dynamic Programming: 1
+--------------------
+674 - CoinChange - Trivial [Mandatory]
