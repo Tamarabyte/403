@@ -2,9 +2,9 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-Trivial: 10
-Non-Trivial: 16
-Total: 26
+Trivial: 11
+Non-Trivial: 18
+Total: 29
 
 
 Other: 3
@@ -56,7 +56,10 @@ Backtracking: 4
 
 
 
-Dynamic Programming: 2
+Dynamic Programming: 5
 --------------------
+10003 - CuttingSticks - Trivial [Mandatory]
+10261 - FerryLoading - Non-Trivial (67.73%)
+147 - Dollars - Non-Trivial (69.13%)
 357 - LetMeCountTheWays - Non-Trivial (75.73%)
 674 - CoinChange - Trivial [Mandatory]
