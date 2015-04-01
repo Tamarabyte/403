@@ -3,8 +3,8 @@ Overview of Submission
 
 UVA Username: tambam
 Trivial: 11
-Non-Trivial: 18
-Total: 29
+Non-Trivial: 19
+Total: 30
 
 
 Other: 3
@@ -63,3 +63,8 @@ Dynamic Programming: 5
 147 - Dollars - Non-Trivial (69.13%)
 357 - LetMeCountTheWays - Non-Trivial (75.73%)
 674 - CoinChange - Trivial [Mandatory]
+
+
+Graph Traversal: 1
+--------------------
+12442 - ForwardingEmails - Non-Trivial (73.92%)
