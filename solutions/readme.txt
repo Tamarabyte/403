@@ -2,9 +2,9 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-Trivial: 11
-Non-Trivial: 19
-Total: 30
+Trivial: 13
+Non-Trivial: 20
+Total: 33
 
 
 Other: 3
@@ -65,6 +65,9 @@ Dynamic Programming: 5
 674 - CoinChange - Trivial [Mandatory]
 
 
-Graph Traversal: 1
+Graph Traversal: 4
 --------------------
+469 - WetlandsOfFlorida - Non-Trivial (72.03%)
+437 - TowerOfBabylon - Trivial [Mandatory]
+10672 - MarblesOnATree - Trivial [Mandatory]
 12442 - ForwardingEmails - Non-Trivial (73.92%)
