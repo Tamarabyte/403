@@ -1,0 +1,60 @@
+YES
+NO
+NO
+NO
+NO
+A :B C D E 
+B :E 
+C :D 
+D :
+E :
+F :
+G :H I 
+H :I 
+I :
+J :
+K :
+L :
+M :
+N :
+O :
+P :
+Q :
+R :
+S :
+T :
+U :
+V :
+W :
+X :
+Y :
+Z :
+
+A :B C D E I 
+B :E 
+C :D I 
+D :I 
+E :
+F :
+G :H 
+H :
+I :
+J :
+K :
+L :
+M :
+N :
+O :
+P :
+Q :
+R :
+S :
+T :
+U :
+V :
+W :
+X :
+Y :
+Z :
+NO
+YES

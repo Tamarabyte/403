@@ -2,13 +2,14 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-Trivial: 13
-Non-Trivial: 23
-Total: 36
+Trivial: 18
+Non-Trivial: 29
+Total: 47
 
 
-Other: 3
+Other: 4
 --------------------
+10763 - ForeignExchange - Trivial
 668 - Parliament - Non-Trivial (58.37%)
 11491 - ErasingAndWinning - Non-Trivial (64.82%)
 10550 - Combination Lock - Trivial
@@ -41,14 +42,18 @@ Sorting: 5
 10026 - ShoemakersProblem - Non-Trivial [Mandatory] (78.63%)
 
 
-Arithmetic: 2
+Arithmetic: 5
 --------------------
+11636 - HelloWorld - Trivial
+11955 - BinomialTheorem - Trivial [Mandatory]
+202 - RepeatingDecimals - Non-Trivial [Mandatory] (66.56%)
 11417 - GCD - Trivial
 10931 - Parity - Trivial
 
 
-Backtracking: 4
+Backtracking: 5
 --------------------
+307 - Sticks - Non-Trivial [Mandatory] (32.44%)
 11195 - AnotherNQueenProblem - Non-Trivial [Mandatory] (59.81%)
 1098 - RobotsOnIce - Non-Trivial (55.45%)
 167 - TheSultansSuccessors - Trivial
@@ -74,7 +79,17 @@ Graph Traversal: 5
 12442 - ForwardingEmails - Non-Trivial (73.92%)
 
 
-Graph Algorithms: 2
+Graph Algorithms: 5
 --------------------
+186 - TripRouting - Non-Trivial (67.54%)
+869 - AirlineComparison - Non-Trivial [Mandatory] (79.91%)
+10187 - FromDuskTillDawn - Non-Trivial (64.76%)
 929 - NumberMaze - Non-Trivial (68.88%)
 10034 - Freckles - Non-Trivial [Mandatory] (77.38%)
+
+
+Combinatorics: 3
+--------------------
+10223 - HowManyNodes - Trivial
+991 - SafeSalutations - Trivial
+11330 - AndysShoes - Non-Trivial [Mandatory] (79.01%)
