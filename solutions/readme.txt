@@ -3,8 +3,8 @@ Overview of Submission
 
 UVA Username: tambam
 Trivial: 22
-Non-Trivial: 29
-Total: 51
+Non-Trivial: 30
+Total: 52
 
 
 Other: 4
@@ -97,7 +97,8 @@ Combinatorics: 5
 11330 - AndysShoes - Non-Trivial [Mandatory] (79.01%)
 
 
-Number Theory: 2
+Number Theory: 3
 --------------------
+10299 - Relatives - Non-Trivial (77.35%)
 10699 - CountTheFactors - Trivial
 10852 - LessPrime - Trivial
