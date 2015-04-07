@@ -2,9 +2,9 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-Trivial: 18
+Trivial: 22
 Non-Trivial: 29
-Total: 47
+Total: 51
 
 
 Other: 4
@@ -88,8 +88,16 @@ Graph Algorithms: 5
 10034 - Freckles - Non-Trivial [Mandatory] (77.38%)
 
 
-Combinatorics: 3
+Combinatorics: 5
 --------------------
+12492 - RubikCycle - Trivial [Mandatory]
+10450 - WorldCupNoise - Trivial
 10223 - HowManyNodes - Trivial
 991 - SafeSalutations - Trivial
 11330 - AndysShoes - Non-Trivial [Mandatory] (79.01%)
+
+
+Number Theory: 2
+--------------------
+10699 - CountTheFactors - Trivial
+10852 - LessPrime - Trivial
