@@ -5,8 +5,18 @@
  * Level: non-trivial
  *
  * Brief problem description:
+ *  Given a list of lower case characters (max 20)
+ *  and a list of orderings (max 300) generate all possible permutations
+ *  of the list of characters that fulfill all given orderings.
  *
  * Solution Summary:
+ *   I saw the orderings as a DAG and represented each letter and there
+ *   orderings in a two dimentional boolean array. Because we're using
+ *   only lower case letters it's an easy transform between integer index's
+ *   and lower case characters for quick lookups. Because the input is so small
+ *   I decided to see if I could get away with next_permutation instead of manually
+ *   generating the permutations and pruning. It was more than fast enough for the AC
+ *   (0.026 seconds).
  *
  * Used Resources:
  *   Competitive Programming 3 by Steven Halim and Felix Halam
@@ -36,6 +46,9 @@ char letters[27];
 bool greater_than[27][27];
 int ind[27];
 
+
+// because the input is small we can afford
+// to do the relatively costly permutation generation
 void generate_permutations() {
 
     do {
