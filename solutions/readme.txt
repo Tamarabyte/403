@@ -2,13 +2,15 @@ Overview of Submission
 ======================
 
 UVA Username: tambam
-Trivial: 25
+Trivial: 29
 Non-Trivial: 31
-Total: 56
+Total: 60
 
 
-Other: 4
+Other: 6
 --------------------
+11727 - CostCutting - Trivial
+12646 - ZeroOrOne - Trivial
 10763 - ForeignExchange - Trivial
 668 - Parliament - Non-Trivial (58.37%)
 11491 - ErasingAndWinning - Non-Trivial (64.82%)
@@ -106,7 +108,9 @@ Number Theory: 5
 10852 - LessPrime - Trivial
 
 
-Geometry: 2
+Geometry: 4
 --------------------
+10065 - UselessTilePackers - Trivial [Mandatory]
+11447 - ResevoirLogs - Trivial
 191 - Intersection - Non-Trivial (67.47%)
 378 - IntersectingLines - Trivial
